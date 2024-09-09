@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Pedidos - Tienda de Comidas Rápidas</title>
+    <link rel="stylesheet" href="Pedidos.css">
+</head>
+
+<body>
+    <br>
+    <img src="LOGO.png" alt="">
+    <div class="container">
+        <header>
+            <h1>Módulo de Pedidos</h1>
+        </header>
+        
+        <section class="order-form">
+            <h2>Crear/Modificar Pedido</h2>
+            <form id="orderForm">
+                <input type="hidden" id="orderId">
+                <label for="orderCustomer">Nombre del Cliente:</label>
+                <input type="text" id="orderCustomer" name="orderCustomer" required>
+
+                <label for="orderItems">Artículos (separados por comas):</label>
+                <input type="text" id="orderItems" name="orderItems" required>
+
+                <label for="orderTotal">Total:</label>
+                <input type="number" id="orderTotal" name="orderTotal" step="0.01" required>
+
+                <label for="orderStatus">Estado:</label>
+                <select id="orderStatus" name="orderStatus">
+                    <option value="Completado">Entregado</option>
+                    <option value="Cancelado">En proceso de envio</option>
+                    <option value="Cancelado">Cancelado</option>
+                </select>
+
+                <button type="submit" id="submitButton">Guardar Pedido</button>
+            </form>
+        </section>
+        
+        <section class="order-list">
+            <h2>Lista de Pedidos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Artículos</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="orderTableBody">
+                    <!-- Pedidos serán añadidos aquí dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+    
+    <script src="Pedidos.js"></script>
+</body>
+
+</html>

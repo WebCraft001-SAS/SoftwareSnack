@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Productos - Tienda de Comidas Rápidas</title>
+    <link rel="stylesheet" href="Productos.css">
+</head>
+
+<body>
+    <br>
+    <img src="LOGO.png" alt="">
+    <div class="container">
+        <header>
+            <h1>Módulo de Productos</h1>
+        </header>
+
+        <section class="product-form">
+            <h2>Agregar/Modificar Producto</h2>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                <label for="productName">Nombre del Producto:</label>
+                <input type="text" id="productName" name="productName" required>
+
+                <label for="productPrice">Precio:</label>
+                <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+
+                <label for="productStatus">Estado:</label>
+                <select id="productStatus" name="productStatus">
+                    <option value="active">Activo</option>
+                    <option value="inactive">Inactivo</option>
+                </select>
+
+                <button type="submit" id="submitButton">Agregar Producto</button>
+            </form>
+        </section>
+
+        <section class="product-list">
+            <h2>Lista de Productos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody">
+                    <!-- Productos serán añadidos aquí dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="Productos.js"></script>
+</body>
+
+</html>
